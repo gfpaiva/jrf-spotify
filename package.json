@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "color-thief-browser": "^2.0.2",
+    "install": "^0.11.0",
+    "normalize.css": "^8.0.0",
+    "npm": "^6.1.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-scripts": "1.1.4",

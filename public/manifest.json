@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "JRF - Spotify",
+  "name": "Jüssi React Fundamentals Spotify",
   "icons": [
     {
       "src": "favicon.ico",
