@@ -9,6 +9,7 @@
     "npm": "^6.1.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "react-loading": "^2.0.2",
     "react-scripts": "1.1.4",
     "spotify-web-api-js": "^0.24.0"
   },

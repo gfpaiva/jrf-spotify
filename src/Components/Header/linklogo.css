@@ -1,0 +1,10 @@
+.header__logo {
+	display: inline-block;
+	margin: 0 1rem;
+	line-height: 1;
+	transition: transform .25s ease-in-out;
+}
+
+.header__logo:hover {
+	transform: scale(1.2);
+}
