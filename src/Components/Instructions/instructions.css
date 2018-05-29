@@ -1,9 +1,0 @@
-.instructions {
-	align-items: center;
-	background-color: #F7F6F4;
-	display: flex;
-	font-size: 1.25rem;
-	height: calc(100vh - 65px);
-	justify-content: center;
-	text-align: center;
-}

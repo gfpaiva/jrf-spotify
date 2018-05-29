@@ -7,6 +7,20 @@ body {
 	font-size: 16px;
 }
 
+.wrapper {
+	align-items: flex-start;
+	background-color: #F7F6F4;
+	display: flex;
+	font-size: 1.25rem;
+	height: calc(100vh - 65px);
+}
+
+.wrapper--all-center {
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
 .container {
 	margin: 0 auto;
 	max-width: 1280px;

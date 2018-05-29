@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 
 import Header from './Header';
 import Instructions from './Instructions';
+import Loading from './Loading';
 
 import SpotifyWebApi from 'spotify-web-api-js';
+import Search from './Search';
 
 const spotifyApi = new SpotifyWebApi();
 spotifyApi.setPromiseImplementation(Promise);
@@ -50,12 +52,31 @@ class App extends Component {
 
 		const { token, loading } = this.state;
 
-		if(loading) return (<h1>LOADING</h1>);
-
 		return (
 			<div>
 				<Header />
-				{!token && <Instructions getToken={this.getToken} />}
+
+				{/* Carregando */}
+				{loading && (
+					<div className="wrapper wrapper--all-center">
+						<Loading />
+					</div>
+				)}
+
+				{/* Página inicial, requisitando permissão */}
+				{!loading && !token && <Instructions getToken={this.getToken} />}
+
+				{/* App, permissões concedidas */}
+				{!loading && token && (
+					<div className="wrapper">
+						<div>
+							<Search />
+							<p>
+								Estou com o token olha aqui: {token}
+							</p>
+						</div>
+					</div>
+				)}
 			</div>
 		);
 	}
