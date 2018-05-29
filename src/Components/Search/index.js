@@ -32,7 +32,7 @@ class Search extends Component {
 
 				{searchActive && (
 					<form className="search__form">
-						<input type="text" className="search__input search__input--active" placeholder="Pesquise pelo id da faixa 🎶" ref={el => this.inputElement = el} />
+						<input type="text" className="search__input search__input--active" placeholder="Pesquise pelo id da faixa 🎧" ref={el => this.inputElement = el} />
 					</form>
 				)}
 			</div>
