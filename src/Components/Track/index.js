@@ -29,6 +29,7 @@ class Track extends Component {
 				try {
 					background = colorThief.getColor(this.inputImage, 600);
 				} catch (err) {
+					console.error(err);
 					background = [0, 0, 0];
 				}
 
