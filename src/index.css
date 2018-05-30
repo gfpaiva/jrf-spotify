@@ -2,18 +2,24 @@
 	box-sizing: border-box;
 }
 
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
 body {
 	font-family: 'Lato', sans-serif;
 	font-size: 16px;
 }
 
 .wrapper {
-	align-items: flex-start;
 	background-color: #F7F6F4;
 	display: flex;
 	font-size: 1.25rem;
 	height: calc(100vh - 65px);
 }
+
+.wrapper--row { flex-direction: row }
 
 .wrapper--all-center {
 	align-items: center;
@@ -26,3 +32,5 @@ body {
 	max-width: 1280px;
 	width: 100%;
 }
+
+canvas { display: none; }

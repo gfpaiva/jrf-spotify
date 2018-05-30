@@ -1,0 +1,12 @@
+.message {
+	text-align: center;
+	font-size: 1.25rem;
+	border: 1px solid;
+	padding: 1em;
+	width: 100%;
+}
+
+.message--warning {
+	background-color: #eacc0a;
+	color: #8e7b00;
+}

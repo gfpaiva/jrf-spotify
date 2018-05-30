@@ -8,13 +8,13 @@ import SpotifyWebApi from 'spotify-web-api-js';
 import Search from './Search';
 
 const spotifyApi = new SpotifyWebApi();
-spotifyApi.setPromiseImplementation(Promise);
 
 class App extends Component {
 
 	state = {
 		loading: (window.location.hash && window.location.hash.indexOf('access_token') > 0) ? true : false,
 		token: null,
+		me: null
 	}
 
 	getToken = () => {
@@ -30,9 +30,15 @@ class App extends Component {
 
 					if( hashToParam && hashToParam.access_token && hashToParam.access_token.length > 0 ) {
 
+						spotifyApi.setAccessToken(hashToParam.access_token);
+
 						this.setState({
 							token: hashToParam.access_token
 						});
+
+						spotifyApi.getMe()
+							.then(me => this.setState({ me }));
+
 						popUp.close();
 					} else {
 
@@ -50,11 +56,11 @@ class App extends Component {
 
 	render() {
 
-		const { token, loading } = this.state;
+		const { token, loading, me } = this.state;
 
 		return (
 			<div>
-				<Header />
+				<Header me={me} />
 
 				{/* Carregando */}
 				{loading && (
@@ -69,12 +75,7 @@ class App extends Component {
 				{/* App, permissões concedidas */}
 				{!loading && token && (
 					<div className="wrapper">
-						<div>
-							<Search />
-							<p>
-								Estou com o token olha aqui: {token}
-							</p>
-						</div>
+						<Search spotifyApi={spotifyApi} />
 					</div>
 				)}
 			</div>

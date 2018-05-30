@@ -8,3 +8,5 @@
 .header__logo:hover {
 	transform: scale(1.2);
 }
+
+.header__logo img { border-radius: 50% }
