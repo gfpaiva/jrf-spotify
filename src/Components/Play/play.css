@@ -1,0 +1,16 @@
+.play__button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	height: 100%;
+	left: 50%;
+	opacity: 0;
+	outline: none;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	transition: opacity .4s ease-in-out;
+	width: 100%;
+}
+
+.track__image:hover .play__button { opacity: 1 }

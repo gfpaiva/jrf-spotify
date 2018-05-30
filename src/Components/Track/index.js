@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ColorThief from 'color-thief-browser';
 
+import Play from '../Play';
+
 import './track.css';
 
 const colorThief = new ColorThief();
@@ -47,19 +49,19 @@ class Track extends Component {
 		const { background } = this.state;
 
 		return (
-			<div className="track" style={{ background: `linear-gradient(rgb(${background}),
-				rgb(${darken(background)}),
-				rgb(${darken(background, 40)}),
-				rgb(${darken(background, 60)}),
-				rgb(${darken(background, 120)}),
-				black 90%)` }}>
+			<div className="track" style={{ background: `linear-gradient(rgb(${background}), rgb(${darken(background)}), rgb(${darken(background, 40)}), rgb(${darken(background, 60)}), rgb(${darken(background, 120)}), black 90%)` }}>
 				<div className="track__content">
-					<div className="track__image">
-						{track.album.images[0] && <img src={track.album.images[0].url} alt={track.name} ref={el => this.inputImage = el} width={600} height={600} />}
-					</div>
+					{track.album.images[0] && (
+						<div className="track__image">
+							<img src={track.album.images[0].url} alt={track.name} ref={el => this.inputImage = el} width={600} height={600} />
+							<Play audio={track.preview_url} />
+						</div>
+					)}
+
 					<h2 className="track__name">
 						<a href={track.external_urls.spotify} target="_blank">{track.name}</a>
 					</h2>
+
 					<p className="track__artists">
 						{track.artists.map(artist => <span className="track__artist" key={artist.id}><a href={artist.external_urls.spotify}>{artist.name}</a></span>)}
 					</p>

@@ -30,8 +30,29 @@
 	margin: 0
 }
 
-.track__image { margin-bottom: 1rem; }
-.track__image img {
+.track__image {
+	margin-bottom: 1rem;
+	position: relative
+}
+
+.track__image:before {
+	background: #000;
+	content: '';
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	transition: opacity .5s ease-in-out;
+	width: 100%;
+}
+
+.track__image:hover:before { opacity: .4 }
+
+
+.track__image > img {
 	height: auto;
+	max-height: 65vh;
 	max-width: 100%;
+	width: auto;
 }
