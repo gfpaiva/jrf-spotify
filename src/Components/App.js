@@ -18,7 +18,7 @@ class App extends Component {
 	}
 
 	getToken = () => {
-		const popUp = window.open('https://accounts.spotify.com/authorize/?client_id=20cd0fb7f0064aef932c3813201b2850&response_type=token&redirect_uri=http:%2F%2Flocalhost:3000%2F', 'Authenticate', 'width=800,height=600,scrollbars=yes');
+		const popUp = window.open(`https://accounts.spotify.com/authorize/?client_id=20cd0fb7f0064aef932c3813201b2850&response_type=token&redirect_uri=${encodeURIComponent(window.location.href)}`, 'Authenticate', 'width=800,height=600,scrollbars=yes');
 
 		const interval = window.setInterval(() => {
 			try {
