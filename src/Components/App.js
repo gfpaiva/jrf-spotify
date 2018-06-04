@@ -49,7 +49,6 @@ class App extends Component {
 			} catch (err) {
 
 				console.log(err);
-				popUp.close();
 			}
 		}, 1000);
 	};
